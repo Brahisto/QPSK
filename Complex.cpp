@@ -4,9 +4,10 @@ Complex::Complex(double re = 0, double im = 0) {
 	real = re;
 	imag = im;
 }
-void Complex::module() const {
-	float abs_ = std::sqrt(pow(real, 2) + pow(imag, 2));
+double Complex::module() const {
+	double abs_ = std::sqrt(pow(real, 2) + pow(imag, 2));
 	std::cout << "module = " << abs_ << std::endl;
+	return abs_;
 }
 void Complex::phase() const {
 	float phase;

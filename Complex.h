@@ -12,7 +12,7 @@ public:
 	double imag;
 	Complex() = default;
 	Complex(double, double);
-	void module() const;
+	double module() const;
 	void phase() const;
 	Complex operator+(const Complex&) const;
 	Complex operator-(const Complex&) const;
