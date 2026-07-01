@@ -1,3 +1,4 @@
+//Complex.cpp
 #include "Complex.h"
 
 Complex::Complex(double re = 0, double im = 0) {
@@ -9,6 +10,8 @@ Complex::Complex(int n) {
 	real = n;
 	imag = n;
 }
+
+Complex::Complex() : real(0), imag(0) {};
 
 double Complex::module() const {
 	double abs_ = std::sqrt(pow(real, 2) + pow(imag, 2));

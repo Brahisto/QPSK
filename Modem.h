@@ -1,4 +1,4 @@
-//modem.h
+//Modem.h
 #pragma once
 
 #include "Complex.h"

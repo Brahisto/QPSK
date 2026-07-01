@@ -1,8 +1,9 @@
+//AWGN.cpp
 #include "AWGN.h"
 
 template <>
 void AWGN<Complex>::process(const Symbols<Complex> & in, Symbols<Complex> & out) {
-    double power = std::accumulate(in.syms_.begin(), in.syms_.end(), 0., [](double acc, Complex x) {return acc + x.module();});
+    double power = std::accumulate(in.syms_.begin(), in.syms_.end(), 0., [](double acc, Complex x) {return acc + std::pow(x.module(), 2);});
     power /= in.syms_.size();
 
     double power_n = power / std::pow(10, SNR / 10);

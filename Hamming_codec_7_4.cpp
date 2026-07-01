@@ -1,3 +1,4 @@
+//Hamming_codec_7_4.cpp
 #include "Hamming_codec_7_4.h"
 
 void Hamming_coder_7_4::NR_code(const Bits & in, Bits & out) {
@@ -14,7 +15,7 @@ void Hamming_coder_7_4::NR_code(const Bits & in, Bits & out) {
     }
 
     u = 0;
-
+    out.bits_.resize(n_*vec.size());
     for (auto i = vec.begin(); i != vec.end(); i++) {
         (*i)[4] = (*i)[0] ^ (*i)[1] ^ (*i)[3];
         (*i)[5] = (*i)[0] ^ (*i)[2] ^ (*i)[3];
@@ -53,10 +54,11 @@ void Hamming_decoder_7_4::NR_decode(const Bits & in, Bits & out) {
             case 7 : (*i)[2] = ((*i)[2] == 1 ? 0 : 1); break;
         }
         
-        (*i).resize(4);
+        (*i).resize(k_);
     }
 
     u = 0;
+    out.bits_.resize(k_*vec.size());
     for (auto i = vec.begin(); i != vec.end();i++) {
         for (auto j : (*i)) out.bits_[u++] = j;
     }

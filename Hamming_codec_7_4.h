@@ -1,3 +1,4 @@
+//Hamming_codec_7_4.h
 #include "Codec.h"
 
 class Hamming_coder_7_4 : public Coder {

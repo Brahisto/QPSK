@@ -1,4 +1,4 @@
-//bits.h
+//Bits.h
 #pragma once
 
 #include <random>

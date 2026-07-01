@@ -1,4 +1,4 @@
-
+//Channel.h
 #include "Bits.h"
 #include <algorithm>
 

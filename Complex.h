@@ -1,4 +1,4 @@
-//complex.h
+//Complex.h
 #pragma once
 
 #include <iostream>
@@ -10,7 +10,7 @@ class Complex {
 public:
     double real;
 	double imag;
-	Complex() = default;
+	Complex();
 	Complex(int);
 	Complex(double, double);
 	double module() const;

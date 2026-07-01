@@ -1,4 +1,4 @@
-//createbits.cpp
+//CreateBits.cpp
 #include "Bits.h"
 
 Bits::Bits(int len) {
@@ -7,8 +7,7 @@ Bits::Bits(int len) {
         }
         else {
             len_ = len;
-            bits_.resize(len_);
-            for (auto i : bits_) i = 0;
+            bits_.resize(len_, 0);
         }
     }
     
