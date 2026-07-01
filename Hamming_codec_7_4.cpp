@@ -42,12 +42,17 @@ void Hamming_decoder_7_4::NR_decode(const Bits & in, Bits & out) {
         sindrom[2] = (*i)[1]^(*i)[2]^(*i)[3]^(*i)[6];
 
         int pos = sindrom[0] + 2*sindrom[1] + 4*sindrom[2];
-
-        if (pos == 0) {
-            (*i).resize(4);
-            continue;
+        
+        switch (pos) {
+            case 1 : (*i)[6] = ((*i)[6] == 1 ? 0 : 1); break;
+            case 2 : (*i)[3] = ((*i)[3] == 1 ? 0 : 1); break;
+            case 3 : (*i)[1] = ((*i)[1] == 1 ? 0 : 1); break;
+            case 4 : (*i)[4] = ((*i)[4] == 1 ? 0 : 1); break;
+            case 5 : (*i)[0] = ((*i)[0] == 1 ? 0 : 1); break;
+            case 6 : (*i)[5] = ((*i)[5] == 1 ? 0 : 1); break;
+            case 7 : (*i)[2] = ((*i)[2] == 1 ? 0 : 1); break;
         }
-        (*i)[pos-1] = (((*i)[pos-1]==1) ? 0 : 1);
+        
         (*i).resize(4);
     }
 

@@ -11,6 +11,8 @@
                 "CreateBits.cpp",
                 "Modem.cpp",
                 "Complex.cpp",
+                "Hamming_coder_7_4.cpp",
+                "AWGN.cpp",
                 "-o",
                 "${workspaceFolder}/program"
             ],

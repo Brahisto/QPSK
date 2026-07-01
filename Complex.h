@@ -11,6 +11,7 @@ public:
     double real;
 	double imag;
 	Complex() = default;
+	Complex(int);
 	Complex(double, double);
 	double module() const;
 	void phase() const;

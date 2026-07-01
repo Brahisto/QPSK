@@ -30,7 +30,7 @@ public:
         if (len <= 0) len_ = 0;
         else {
             len_ = len;
-            syms_.resize(len_);
+            syms_.resize(len_, static_cast<T>(0));
         }
     }
 

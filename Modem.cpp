@@ -55,7 +55,7 @@ std::vector<int> Functor::operator()(const Complex & num) {
 }
 
 void QPSK_Demod::demodulate(Symbols<Complex> & syms, Bits & bits, Functor & f2) {
-    std::vector<std::vector<int>> vec_(bits.bits_.size() / 2, std::vector<int>(2, 0));
+    std::vector<std::vector<int>> vec_(syms.syms_.size(), std::vector<int>(2, 0));
     std::transform(syms.syms_.begin(), syms.syms_.end(), vec_.begin(), f2);
 
     int u{};
